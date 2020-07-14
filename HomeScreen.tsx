@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 
 export function HomeScreen(props: any) {
-
-    props.navigation.openDrawer();
 
     return (
         <View style={{ ...styles, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -20,14 +20,15 @@ export function HomeScreen(props: any) {
                 }
             />
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
+
