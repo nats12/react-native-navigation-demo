@@ -1,11 +1,22 @@
 import React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { DetailsScreen } from './DetailsScreen';
+import { ContactAScreen } from './ContactAScreen';
+import { ContactBScreen } from './ContactBScreen';
 
 export function ContactScreen(props: any) {
+
+    const Stack = createStackNavigator();
+
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 40 }}>Contact Screen</Text>
-            <Text style={{ fontSize: 20 }}>Welcome to the Contact screen</Text>
-        </View>
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Contact A"
+                component={ContactAScreen} />
+            <Stack.Screen
+                name="Contact B"
+                component={ContactBScreen} />
+        </Stack.Navigator>
     );
 }

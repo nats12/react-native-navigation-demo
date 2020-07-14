@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { DetailsScreen } from './DetailsScreen';
 import { ContactScreen } from './ContactScreen';
 import { HomeScreen } from './HomeScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export function MainScreen(props: any) {
 
@@ -14,7 +15,7 @@ export function MainScreen(props: any) {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused, color, size }) => {
-                    let iconName = "Home";
+                    let iconName = "ios-home";
 
                     if(route.name === 'Home') {
                     }
@@ -26,6 +27,8 @@ export function MainScreen(props: any) {
 
                     return <Ionicons name={iconName} size={size} color={color} />;
                 },
+                
+
             })}>
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Details" component={DetailsScreen} />
