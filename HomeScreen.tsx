@@ -2,8 +2,11 @@ import React from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
 
 export function HomeScreen(props: any) {
+
+    props.navigation.openDrawer();
+
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ ...styles, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 40 }}>Home Screen</Text>
             <Text style={{ fontSize: 20 }}>Welcome to the Home screen</Text>
             <Button
@@ -19,3 +22,12 @@ export function HomeScreen(props: any) {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+});
