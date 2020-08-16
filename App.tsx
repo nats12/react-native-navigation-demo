@@ -1,34 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, Text, StyleSheet, Button, SafeAreaView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MainScreen } from './MainScreen';
-import { HomeScreen } from './HomeScreen';
-import { DetailsScreen } from './DetailsScreen';
-import { ContactScreen } from './ContactScreen';
+import { createStackNavigator } from '@react-navigation/stack';
+import Root from './Roots';
 
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Drawer.Navigator initialRouteName="Home">
-				<Drawer.Screen name="Home" component={MainScreen} />
-				<Drawer.Screen name="Details" component={DetailsScreen} />
-				<Drawer.Screen name="Contact" component={ContactScreen} />
-			</Drawer.Navigator>
+			<Stack.Navigator>
+				<Stack.Screen name="Home" component={MainScreen} />
+				<Stack.Screen name="Root" component={Root} />
+			</Stack.Navigator>
 		</NavigationContainer>
 
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
+
